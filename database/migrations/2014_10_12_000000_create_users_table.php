@@ -38,6 +38,12 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+        Schema::create('struktur_jabatan', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('jenis_jabatan');
+            $table->timestamps();
+        });
+
         Schema::create('jabatan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('jabatan');
@@ -54,6 +60,7 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('desa_cimuja');
+        Schema::dropIfExists('struktur_jabatan');
         Schema::dropIfExists('jabatan');
     }
 }

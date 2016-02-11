@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jabatan = DB::table('jabatan')->get();
-        return view('home',['jabatan' => $jabatan]);
+        $struktur_jabatan = DB::table('struktur_jabatan')->get();
+        return view('home',['struktur_jabatan' => $struktur_jabatan]);
     }
 }

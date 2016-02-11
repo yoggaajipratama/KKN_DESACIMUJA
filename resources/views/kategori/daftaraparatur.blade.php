@@ -1,6 +1,6 @@
 @extends('templates.view_header_admin')
 @section('content')
-<body style="font-family: 'Times New Roman', Times, serif; font-size: 10pt;">
+<!-- <body style="font-family: 'Times New Roman', Times, serif; font-size: 10pt;"> -->
 <div class="col-md-12">
 	<div class="card">
 		<h2 class="text-center">DAFTAR APARATUR DESA CIMUJA</h2>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Aparatur;
 class AparaturController extends Controller
@@ -16,6 +16,15 @@ class AparaturController extends Controller
 
     public function daftarlama(){
         return view('kategori/view_kategori');
+    }
+
+    public function tampil_jabatan(){
+        $jenis_jabatan = DB::table('struktur_jabatan')->get();
+        return view('dataInput/inputJabatan',['jenis_jabatan' => $jenis_jabatan]);
+    }
+
+    public function jabatan(){
+        return redirect('home');
     }
     
     public function inputdata(Request $request){

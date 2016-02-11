@@ -4,19 +4,30 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
-                <div class="row justify-content-center">
-                    <h5><strong>Masukkan Data Jabatan Baru</strong></h5>
-                </div>
-                <input type="text" name="jabatan">
+            <form action="{{route('tambah_jabatan')}}" method="POST">
+                <div class="card">
+                    <div class="row justify-content-center">
+                        <h5><strong>Masukkan Data Jabatan Baru</strong></h5>
+                    </div>
+                    <input type="text" name="jabatan">
 
-                <div class="row justify-content-center">
-                    <h5><strong>Masukkan Nomor Induk Kependudukan Penambah</strong></h5>
+                    <div class="row justify-content-center">
+                        <h5><strong>Masukkan Nomor Induk Kependudukan Penambah</strong></h5>
+                    </div>
+                    <input type="text" name="jabatan">
+
+                    <div class="row justify-content-center">
+                        <h5><strong>Jenis Jabatan</strong></h5>
+                    </div>
+                    <select name="jenis_jabatan">
+                        <?php foreach ($jenis_jabatan as $key): ?>
+                            <option>{{$key->jenis_jabatan}}</option>
+                        <?php endforeach ?>
+                    </select>
+                    Baru
+                    <input type="submit" name="submit" value="Simpan" class="btn btn-success" onclick="return confirm('Apakah anda yakin? ')">
                 </div>
-                <input type="text" name="jabatan">
-                
-                <button class="btn btn-success" onclick="return confirm('Yakin data akan disimpan? ')">Simpan</button>
-            </div>
+            </form>
             <div class="card">
                 <div class="row justify-content-center">
                     <h5><strong>Data Jabatan Tersedia Saat Ini</strong></h5>

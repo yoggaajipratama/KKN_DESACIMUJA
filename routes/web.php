@@ -12,9 +12,9 @@ Route::get('/kategori', function () {
     return view('kategori/view_kategori');
 });
 
-Route::get('/tambahjabatan', function(){
-	return view('dataInput/inputJabatan');
-});
+Route::get('/tambahjabatan', 'AparaturController@tampil_jabatan')->name('jabatan');
+Route::post('/tambahjabatan', 'AparaturController@jabatan')->name('tambah_jabatan');
+
 
 Route::get('/daftaraparatur', 'AparaturController@daftar')->name('daftaraparatur');
 Route::get('/daftaraparaturlama', 'AparaturController@daftarlama')->name('daftaraparaturlama');
