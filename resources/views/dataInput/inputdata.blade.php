@@ -29,6 +29,11 @@
 			<option value="S3">S3</option>
 		</select><br>
 		<label>Jabatan</label>
+		<select>
+			<option></option>
+		</select>
+		<label>No SK Pengangkatan</label>
+		<input type="text" name="">
 	</form>
 </body>
 </html>
