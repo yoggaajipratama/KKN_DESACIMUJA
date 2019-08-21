@@ -32,10 +32,47 @@
         <ul class="nav">
           <li class="nav-item active  ">
             <a class="nav-link" href="#0">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <p>Kategori Data Kepengurusan</p>
             </a>
           </li>
+
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <p>Data Kepengurusan Lama</p>
+            </a>
+          </li>
+
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <p>Cetak Data Kepengurusan</p>
+            </a>
+          </li>
+
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{{url('/tambahjabatan')}}">
+              <p>Tambah Data Jabatan</p>
+            </a>
+          </li>
+          
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <p>Tambah Data Kepengurusan</p>
+            </a>
+          </li>
+          
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <p>Update Data Kepengurusan</p>
+            </a>
+          </li>
+
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <p>Hapus Data Kepengurusan</p>
+            </a>
+          </li>
+
+
           <!-- your sidebar here -->
         </ul>
       </div>
