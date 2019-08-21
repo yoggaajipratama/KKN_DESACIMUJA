@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Biodata</title>
+	<title>Biodata - @yield('title');</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
 </head>
 <body>
@@ -11,5 +11,8 @@
 				<img src="{{asset('images/Sumedang.png')}}" style="width: 210px;height: 150px">
 			</div>
 		</div>
+	</div>
+	<div class="container">
+		@yield('content');
 	</div>
 </body>

@@ -15,11 +15,25 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('nik')->unique();
             $table->string('password');
-            $table->rememberToken();
+        });
+
+        Schema::create('desa_cimuja', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nama');
+            $table->string('jbtn');
+            $table->string('nik')->unique();
+            $table->string('tempat_lahir');
+            $table->date('tgl_lahir');
+            $table->string('jns_kl');
+            $table->string('gol_darah');
+            $table->string('agama');
+            $table->string('pddk_trkhr');
+            $table->string('jns_pkrj');
+            $table->string('cacat');
+            $table->string('status_kwn');
+            $table->string('hub_klrg');
             $table->timestamps();
         });
     }
@@ -32,5 +46,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('desa_cimuja');
     }
 }
