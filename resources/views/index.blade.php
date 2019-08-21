@@ -14,7 +14,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active"><a href="index.html" class="nav-link">Beranda</a></li>
 				<li class="nav-item"><a href="about.html" class="nav-link">Tentang</a></li>
-				<li class="nav-item"><a href="practice-areas.html" class="nav-link">Kelola data</a></li>
+				<li class="nav-item"><a href="{{url('/kategori')}}" class="nav-link">Kelola data</a></li>
 			</ul>
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 				<h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
 					<marquee><h3 style="color: white;">SDM Unggul Untuk Indonesia Maju</h3></marquee>
 				</h1>
-				<p><a href="#" class="btn btn-success" style="width: 150px;">Login</a></p>
+				<p><a href="{{url('/home')}}" class="btn btn-success" style="width: 150px;">Login</a></p>
 			</div>
 		</div>
 	</div>
