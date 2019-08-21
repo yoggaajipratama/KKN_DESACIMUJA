@@ -8,32 +8,53 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
 </head>
 <body>
-	<h1>Input Data Aparatur</h1>
-	<form action="route('inputAparatur')">
-		<label>Nama	: </label>
-		<input type="text" name="nama"><br>
-		<label>Jenis Kelamin : </label>
-		<select>
-		<option value="Laki-Laki">Laki-Laki</option>
-		<option value="Perempuan">Perempuan</option>
-		</select><br>
-		<label>Tanggal Lahir</label>
-		<input type="date" name="tgllahir"><br>
-		<label>Pendidikan</label>
-		<select>
-			<option value="SD">SD</option>
-			<option value="SMP">SMP</option>
-			<option value="SMA">SMA</option>
-			<option value="S1">S1</option>
-			<option value="S2">S2</option>
-			<option value="S3">S3</option>
-		</select><br>
-		<label>Jabatan</label>
-		<select>
-			<option></option>
-		</select>
-		<label>No SK Pengangkatan</label>
-		<input type="text" name="">
-	</form>
+	<div class="container">
+		<div class="text-center">
+			<h1>Input Data Aparatur</h1>
+		</div>
+		<form action="{{route('inputAparatur')}}" method="get">
+			<label>Nama	: </label>
+			<input type="text" name="nama"><br>
+			<label>Jenis Kelamin : </label>
+			<select name="jk">
+			<option value="Laki-Laki">Laki-Laki</option>
+			<option value="Perempuan">Perempuan</option>
+			</select><br>
+			<label>Tanggal Lahir</label>
+			<input type="date" name="tgllahir"><br>
+			<label>Pendidikan</label>
+			<select name="pendidikan">
+				<option value="SD">SD</option>
+				<option value="SMP">SMP</option>
+				<option value="SMA">SMA</option>
+				<option value="S1">S1</option>
+				<option value="S2">S2</option>
+				<option value="S3">S3</option>
+			</select><br>
+			<label>Jabatan</label>
+			<select name="jabatan">
+				<option></option>
+			</select><br>
+			<label>No SK Pengangkatan</label>
+			<input type="number" name="skangkat"><br>
+			<label for="">Masa Berakhir Jabatan</label>
+			<input type="number" name="ahirjabatan"><br>
+			<label for="keterangan">Keterangan</label>
+			<textarea name="keterangan" id="keterangan" cols="30" rows="4"></textarea><br>
+			<label for="instansi">Instansi Pemerintahan</label>
+			<select name="instansi" id="">
+				<option value="">Kesehatan</option>
+				<option value="">Koramil</option>
+				<option value="">Polsek</option>
+			</select><br>
+			<label for="">NIP / NRP</label>
+			<input type="number" name="nip" id=""><br>
+			<label for="">Foto</label>
+			<input type="file" name="foto" id=""><br><br>
+			<div class="text-right">
+				<input class="btn btn-success text-right" type="submit" value="Simpan">
+			</div>	
+		</form>
+	</div>
 </body>
 </html>

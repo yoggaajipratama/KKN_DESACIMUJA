@@ -14,11 +14,8 @@ Route::get('/kategori', function () {
 Route::get('/daftaraparatur', function(){
 	return view('data_print/daftaraparatur');
 });
-<<<<<<< HEAD
 Route::get('/aparatur','AparaturController@index')->name('tampilInput');
-Route::post('/aparatur/save','AparaturController@InputData')->name('inputAparatur');
-=======
+Route::get('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> 8c704aec75bde158cb87e93ba83bac10a3147cca
