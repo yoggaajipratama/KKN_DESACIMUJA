@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('nik')->unique();
             $table->string('password');
+            $table->timestamps();
         });
 
         Schema::create('desa_cimuja', function (Blueprint $table) {
