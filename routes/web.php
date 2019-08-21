@@ -10,3 +10,5 @@ Route::get('/biodata', function () {
 Route::get('/daftaraparatur', function(){
 	return view('data_print/daftaraparatur');
 });
+Route::get('/aparatur','AparaturController@index')->name('tampilInput');
+Route::post('/aparatur/save','AparaturController@InputData')->name('inputAparatur');
