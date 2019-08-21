@@ -5,10 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <?php for ($i=1; $i < 11; $i++) { 
-                    echo $i.". ";
-                    echo "<br>";
-                } ?>
+                <?php foreach ($jabatan as $key): ?>
+                    <p>{{$key->jabatan}}</p>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
