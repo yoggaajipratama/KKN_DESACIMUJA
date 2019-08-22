@@ -9,24 +9,19 @@
                     <h5><strong>Masukkan Data Jabatan Baru</strong></h5>
                 </div>
                 <input type="text" name="jabatan">
-                <button class="btn btn-success">Simpan</button>
+
+                <div class="row justify-content-center">
+                    <h5><strong>Masukkan Nomor Induk Kependudukan Penambah</strong></h5>
+                </div>
+                <input type="text" name="jabatan">
+                
+                <button class="btn btn-success" onclick="return confirm('Yakin data akan disimpan? ')">Simpan</button>
             </div>
             <div class="card">
                 <div class="row justify-content-center">
-                    <h5><strong>Data Jabatan Tersedia</strong></h5>
+                    <h5><strong>Data Jabatan Tersedia Saat Ini</strong></h5>
                 </div>
                 <br>
-                <h6>1. Kepala desa</h6>
-                <br>
-                <h6>1. Kepala desa</h6>
-                <br>
-                <h6>1. Kepala desa</h6>
-                <br>
-                <h6>1. Kepala desa</h6>
-                <br>
-                <h6>1. Kepala desa</h6>
-                <br>
-                <h6>1. Kepala desa</h6>
             </div>
         </div>
     </div>
