@@ -15,7 +15,7 @@ Route::get('/daftaraparatur', function(){
 	return view('data_print/daftaraparatur');
 });
 Route::get('/aparatur','AparaturController@index')->name('tampilInput');
-Route::get('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
+Route::post('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

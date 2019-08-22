@@ -12,7 +12,8 @@
 		<div class="text-center">
 			<h1>Input Data Aparatur</h1>
 		</div>
-		<form action="{{route('inputAparatur')}}" method="get">
+		<form action="{{route('inputAparatur')}}" method="post">
+		@csrf 
 			<label>Nama	: </label>
 			<input type="text" name="nama"><br>
 			<label>Jenis Kelamin : </label>
@@ -33,7 +34,7 @@
 			</select><br>
 			<label>Jabatan</label>
 			<select name="jabatan">
-				<option></option>
+				<option value="kades">Kades</option>
 			</select><br>
 			<label>No SK Pengangkatan</label>
 			<input type="number" name="skangkat"><br>
@@ -43,9 +44,9 @@
 			<textarea name="keterangan" id="keterangan" cols="30" rows="4"></textarea><br>
 			<label for="instansi">Instansi Pemerintahan</label>
 			<select name="instansi" id="">
-				<option value="">Kesehatan</option>
-				<option value="">Koramil</option>
-				<option value="">Polsek</option>
+				<option value="kesehatan">Kesehatan</option>
+				<option value="koramil">Koramil</option>
+				<option value="polsek">Polsek</option>
 			</select><br>
 			<label for="">NIP / NRP</label>
 			<input type="number" name="nip" id=""><br>
