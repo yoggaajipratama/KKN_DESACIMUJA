@@ -19,6 +19,12 @@ Route::get('/tambahjabatan', function(){
 Route::get('/daftaraparatur', 'AparaturController@daftar')->name('daftaraparatur');
 Route::get('/daftaraparaturlama', 'AparaturController@daftarlama')->name('daftaraparaturlama');
 Route::get('/aparatur','AparaturController@index')->name('tampilInput');
+<<<<<<< HEAD
+=======
+
+Route::post('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
+
+>>>>>>> 378362dcfb42093b34deed6820d2ab0e43458a1d
 Route::get('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
 
 Auth::routes();
