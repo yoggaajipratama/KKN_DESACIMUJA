@@ -20,12 +20,11 @@ Route::get('/tambahjabatan', function(){
 });
 
 Route::get('/aparatur','AparaturController@index')->name('tampilInput');
-<<<<<<< HEAD
+
 Route::post('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
-=======
+
 Route::get('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
 
->>>>>>> 09b7ea2b211b7a50438a4db4e9ae1f3e9c069f73
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
