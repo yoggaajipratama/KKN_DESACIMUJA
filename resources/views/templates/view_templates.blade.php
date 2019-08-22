@@ -41,7 +41,7 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Desa Cimuja, Kecamatan Cimalaka, Kanupaten Sumedang</span></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Desa Cimuja, Kecamatan Cimalaka, Kabupaten Sumedang</span></li>
 	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+62 853-1455-4800</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">desa_cimuja@gmail.com</span></a></li>
 	              </ul>

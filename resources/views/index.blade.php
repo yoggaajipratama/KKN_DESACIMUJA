@@ -14,7 +14,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active"><a href="index.html" class="nav-link">Beranda</a></li>
 				<li class="nav-item"><a href="about.html" class="nav-link">Tentang</a></li>
-				<li class="nav-item"><a href="{{url('/kategori')}}" class="nav-link">Kelola data</a></li>
+				<li class="nav-item"><a href="{{url('/home')}}" class="nav-link">Kelola data</a></li>
 			</ul>
 		</div>
 	</div>

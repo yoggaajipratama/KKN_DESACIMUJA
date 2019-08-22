@@ -14,7 +14,7 @@
                             <label for="nik" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Induk Kependudukan') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nik" type="nik" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{ old('nik') }}" required autocomplete="nik">
+                                <input id="nik" type="nik" max="16" maxlength="16" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{ old('nik') }}" required autocomplete="nik">
 
                                 @error('nik')
                                     <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Kata Sandi') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" max="8" maxlength="8" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

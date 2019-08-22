@@ -37,6 +37,12 @@ class CreateUsersTable extends Migration
             $table->string('hub_klrg');
             $table->timestamps();
         });
+
+        Schema::create('jabatan', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('jabatan');
+            $table->timestamps();
+        });
     }
 
     /**
