@@ -31,7 +31,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="#0">
+            <a class="nav-link" href="{{asset('/home')}}">
               <p>Kategori Data Kepengurusan</p>
             </a>
           </li>

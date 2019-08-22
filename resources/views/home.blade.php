@@ -2,11 +2,14 @@
 
 @section('content')
 <div class="container">
+<h2><strong>DATA PEMERINTAHAN DAN LEMBAGA</strong></h2>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
                 <?php foreach ($jabatan as $key): ?>
-                    <p>{{$key->jabatan}}</p>
+                    <a href="">
+                        <p> &nbsp; >> {{$key->jabatan}}</p>
+                    </a>
                 <?php endforeach ?>
             </div>
         </div>
