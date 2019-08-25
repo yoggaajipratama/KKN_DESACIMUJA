@@ -10,6 +10,19 @@ class AparaturController extends Controller
     	return view('/dataInput/inputdata');
     }
     public function inputdata(Request $request){
+        $this->validate($request,[
+            'nama'=>'required',
+            'jk'=>'required',
+            'tgllahir'=>'required',
+            'pendidikan'=>'required',
+            'jabatan'=>'required',
+            'skangkat'=>'required',
+            'ahirjabatan'=>'required',
+            'keterangan'=>'required',
+            'instansi'=>'required',
+            'nip'=>'required',
+            'foto'=>'required',
+        ]);
         $data = new Aparatur;
         $data->nama = $request->get('nama');
         $data->jk = $request->get('jk');
