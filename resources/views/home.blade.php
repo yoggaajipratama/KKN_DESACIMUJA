@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card">
                 <?php foreach ($jabatan as $key): ?>
-                    <a href="">
+                    <a href="{{route('daftaraparatur')}}">
                         <p> &nbsp; >> {{$key->jabatan}}</p>
                     </a>
                 <?php endforeach ?>

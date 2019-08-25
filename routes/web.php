@@ -11,14 +11,13 @@ Route::get('/biodata', function () {
 Route::get('/kategori', function () {
     return view('kategori/view_kategori');
 });
-Route::get('/daftaraparatur', function(){
-	return view('data_print/daftaraparatur');
-});
 
 Route::get('/tambahjabatan', function(){
 	return view('dataInput/inputJabatan');
 });
 
+Route::get('/daftaraparatur', 'AparaturController@daftar')->name('daftaraparatur');
+Route::get('/daftaraparaturlama', 'AparaturController@daftarlama')->name('daftaraparaturlama');
 Route::get('/aparatur','AparaturController@index')->name('tampilInput');
 
 Route::post('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');

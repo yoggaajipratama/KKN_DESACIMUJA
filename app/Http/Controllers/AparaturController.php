@@ -9,6 +9,15 @@ class AparaturController extends Controller
     public function index(){
     	return view('/dataInput/inputdata');
     }
+
+    public function daftar(){
+        return view('kategori/daftaraparatur');
+    }
+
+    public function daftarlama(){
+        return view('kategori/view_kategori');
+    }
+    
     public function inputdata(Request $request){
         $this->validate($request,[
             'nama'=>'required',
