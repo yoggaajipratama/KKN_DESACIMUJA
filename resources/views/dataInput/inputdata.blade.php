@@ -33,15 +33,12 @@
 				<th>Pendidikan</th>
 				<td>
 					<select class="custom-select form-control" name="pendidikan" require>
-<<<<<<< HEAD
 						<option value="SD">SD</option>
 						<option value="SLTP">SLTP/Sederajat</option>
 						<option value="SLTA">SLTA/Sederajat</option>
-=======
 						<option value="SD">SD/Sederajat</option>
 						<option value="SLTP">SLTP/SMP/MTS/Sederajat</option>
 						<option value="SLTA">SLTA/SMK/STM/Sederajat</option>
->>>>>>> e90fc0663704e54ee375b847a4e02635051c3c4a
 						<option value="D1">D1</option>
 						<option value="D3">D3</option>
 						<option value="D4">D4</option>
@@ -66,24 +63,14 @@
 			<tr>
 				<th>Jenis Jabatan</th>
 				<td>
-<<<<<<< HEAD
 					<select class="custom-select form-control" name="jjb" require>
 					@foreach($struktur_jabatan as $jjb)
 						<option value="{{$jjb->jenis_jabatan}}">{{$jjb->jenis_jabatan}}</option>
-=======
-					<select class="custom-select form-control" name="jabatan" require>
-					@foreach($jenis_jabatan as $jbt)
-						<option value="{{$jbt->jenis_jabatan}}">{{$jbt->jenis_jabatan}}</option>
->>>>>>> e90fc0663704e54ee375b847a4e02635051c3c4a
 					@endforeach
 					</select>
 				</td>
 			</tr>
-<<<<<<< HEAD
-			
-=======
 
->>>>>>> e90fc0663704e54ee375b847a4e02635051c3c4a
 			<tr>
 				<th>Nomor SK</th>
 				<td><input type="text" class="form-control" name="skangkat" require></td>

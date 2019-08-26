@@ -43,11 +43,8 @@ class CreateUsersTable extends Migration
             $table->string('instansi');
             $table->string('nip');
             $table->string('foto'); 
-<<<<<<< HEAD
             $table->string('jns_jbt');
-=======
             $table->string('status');
->>>>>>> e90fc0663704e54ee375b847a4e02635051c3c4a
             $table->timestamps();
         });
 
