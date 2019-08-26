@@ -10,14 +10,9 @@ use App\DesaCimuja;
 class AparaturController extends Controller
 {
     public function index(){
-        $jenis_jabatan = DB::table('struktur_jabatan')->get();
         $datajbt = DB::table('jabatan')->orderBy('id')->get();
-<<<<<<< HEAD
         $struktur_jabatan = DB::table('struktur_jabatan')->get();
     	return view('/dataInput/inputdata',['jabatan'=>$datajbt, 'struktur_jabatan'=>$struktur_jabatan]);
-=======
-    	return view('/dataInput/inputdata',['jabatan'=>$datajbt],['jenis_jabatan' => $jenis_jabatan]);
->>>>>>> e90fc0663704e54ee375b847a4e02635051c3c4a
     }
 
     public function daftar(){
