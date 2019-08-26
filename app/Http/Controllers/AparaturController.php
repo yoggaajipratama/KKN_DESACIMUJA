@@ -26,7 +26,7 @@ class AparaturController extends Controller
     }
 
     public function tampil_jabatan(){
-        $jenis_jabatan = DB::table('jabatan')->get();
+        $jenis_jabatan = DB::table('struktur_jabatan')->get();
         return view('dataInput/inputJabatan',['jenis_jabatan' => $jenis_jabatan]);
     }
 
