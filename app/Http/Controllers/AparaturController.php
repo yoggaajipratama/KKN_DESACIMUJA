@@ -86,4 +86,11 @@ class AparaturController extends Controller
         $data->save();
         return redirect('daftaraparatur');
     }
+
+    public function editdata($id){
+        $data = DesaCimuja::find($id);
+        $datajbt = DB::table('jabatan')->orderBy('id')->get();
+        $struktur_jabatan = DB::table('struktur_jabatan')->get();
+        return view('dataInput/dataEdit', ['data'=>$data,'jabatan'=>$datajbt, 'struktur_jabatan'=>$struktur_jabatan]);
+    }
 }

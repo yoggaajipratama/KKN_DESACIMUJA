@@ -16,6 +16,7 @@ Route::get('/kategori', function () {
 
 Route::post('/aparatur/save','AparaturController@inputdata');
 
+Route::get('/aparatur/edit/{id}','AparaturController@editdata')->name('tampedit');
 
 Auth::routes();
 Route::get('/tambahjabatan', 'AparaturController@tampil_jabatan')->name('jabatan');
