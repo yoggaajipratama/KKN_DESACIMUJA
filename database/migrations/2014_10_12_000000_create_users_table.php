@@ -43,6 +43,7 @@ class CreateUsersTable extends Migration
             $table->string('instansi');
             $table->string('nip');
             $table->string('foto'); 
+            $table->string('status');
             $table->timestamps();
         });
 
