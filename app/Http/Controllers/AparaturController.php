@@ -3,18 +3,25 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Aparatur;
+use App\Jabatan;
+use App\DesaCimuja;
+
 class AparaturController extends Controller
 {
     public function index(){
-    	return view('/dataInput/inputdata');
+        $datajbt = DB::table('jabatan')->orderBy('id')->get();
+    	return view('/dataInput/inputdata',['jabatan'=>$datajbt]);
     }
 
     public function daftar(){
-        return view('kategori/daftaraparatur');
+        $data = DB::table('desa_cimuja')->get();
+        return view('kategori/daftaraparatur',['data'=>$data]);
     }
 
     public function daftarlama(){
+
         return view('kategori/view_kategori');
     }
 
@@ -28,18 +35,47 @@ class AparaturController extends Controller
     }
     
     public function inputdata(Request $request){
-        $data = new Aparatur;
+        $this->validate($request,[
+            'nama'=>'required',
+            'jk'=>'required',
+            'tgllahir'=>'required',
+            'pendidikan'=>'required',
+            'jabatan'=>'required',
+            'skangkat'=>'required',
+            'ahirjabatan'=>'required',
+            'keterangan'=>'required',
+            'instansi'=>'required',
+            'nip'=>'required',
+            'foto'=>'required|file|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        $data = new DesaCimuja;
         $data->nama = $request->get('nama');
-        $data->jk = $request->get('jk');
-        $data->tgllahir = $request->get('tgllahir');
-        $data->pendidikan = $request->get('pendidikan');
-        $data->jabatan = $request->get('jabatan');
+        $data->nik = $request->get('nik');
+        $data->tempat_lahir = $request->get('tmplahir');
+        $data->jns_kl = $request->get('jk');
+        $data->tgl_lahir = $request->get('tgllahir');
+        $data->gol_darah = $request->get('goldar');
+        $data->agama = $request->get('agama');
+        $data->pddk_trkhr = $request->get('pendidikan');
+        $data->jbtn = $request->get('jabatan');
+        $data->jns_pkrj = $request->get('jp');
+        // buat dulu view inputan untuk cacat
+        $data->cacat = $request->get('cacat');
+        $data->status_kwn = $request->get('statkaw');
         $data->skangkat = $request->get('skangkat');
-        $data->skahir = $request->get('ahirjabatan');
+        $data->ahirjabatan = $request->get('ahirjabatan');
         $data->keterangan = $request->get('keterangan');
         $data->instansi = $request->get('instansi');
         $data->nip = $request->get('nip');
-        $data->foto = $request->get('foto');
+        // $data->foto = $request->get('foto');
+        // menyimpan data file yang diupload ke variabel $file
+		$file = $request->file('foto');
+        $nip = $request->get('nik');
+        $nama_file = $nip."_".$file->getClientOriginalName();
+        $data->foto = $nama_file;
+      	// isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'data_gambar';
+		$file->move($tujuan_upload,$nama_file);
         $data->save();
         return redirect('daftaraparatur');
     }
