@@ -58,6 +58,17 @@
 			</tr>
 
 			<tr>
+				<th>Jenis Jabatan</th>
+				<td>
+					<select name="jjb" require>
+					@foreach($jnsJbt as $jjb)
+						<option value="{{$jjb->jenis_jabatan}}">{{$jjb->jenis_jabatan}}</option>
+					@endforeach
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
 				<th>Nomor SK</th>
 				<td><input type="text" class="form-control" name="skangkat" require></td>
 			</tr>
