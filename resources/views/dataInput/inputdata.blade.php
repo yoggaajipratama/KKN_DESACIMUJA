@@ -4,18 +4,20 @@
 		<center>
 			<h2>Tambah Data Kepengurusan</h2>
 		</center>
+		<form action="/aparatur/save" method="post" enctype="multipart/form-data">
+		@csrf
 		<table class="table table-light table-bordered">
 			<tr>
 				<th>Nama Lengkap</th>
-				<td><input class="form-control" type="text" name=""></td>
+				<td><input class="form-control" type="text" name="nama" require></td>
 			</tr>
 
 			<tr>
 				<th>Jenis Kelamin</th>
 				<td>
-					<select>
-						<option>Pria</option>
-						<option>Wanita</option>
+					<select name="jk" require>
+						<option value="Pria">Pria</option>
+						<option value="Wanita">Wanita</option>
 					</select>
 				</td>				
 			</tr>
@@ -23,20 +25,23 @@
 			<tr>
 				<th>Tanggal lahir</th>
 				<td>
-					<input class="form-control" type="date" name="">
+					<input class="form-control" type="date" name="tgllahir" require>
 				</td>
 			</tr>
 
 			<tr>
 				<th>Pendidikan</th>
 				<td>
-					<select>
-						<option>SD</option>
-						<option>SMP</option>
-						<option>SMA</option>
-						<option>S1</option>
-						<option>S2</option>
-						<option>S3</option>
+					<select name="pendidikan" require>
+						<option value="SD">SD</option>
+						<option value="SLTP">SLTP</option>
+						<option value="SLTA">SLTA</option>
+						<option value="D1">D1</option>
+						<option value="D3">D3</option>
+						<option value="D4">D4</option>
+						<option value="S1">S1</option>
+						<option value="S2">S2</option>
+						<option value="S3">S3</option>
 					</select>
 				</td>
 			</tr>
@@ -44,62 +49,74 @@
 			<tr>
 				<th>Jabatan</th>
 				<td>
-					<select>
-						<option>DB</option>
+					<select name="jabatan" require>
+					@foreach($jabatan as $jbt)
+						<option value="{{$jbt->jabatan}}">{{$jbt->jabatan}}</option>
+					@endforeach
 					</select>
 				</td>
 			</tr>
 
 			<tr>
 				<th>Nomor SK</th>
-				<td><input type="text" class="form-control" name=""></td>
+				<td><input type="text" class="form-control" name="skangkat" require></td>
 			</tr>
 
 			<tr>
-				<th>Masa Berakhir Jabatan</th>
-				<td><input type="date" class="form-control" name=""></td>
+				<th>Massa Akhir Jabatan</th>
+				<td><input type="date" class="form-control" name="ahirjabatan" require></td>
 			</tr>
 
 			<tr>
 				<th>Keterangan</th>
 				<td>
-					<textarea name="" class="form-control"></textarea>
+					<textarea name="keterangan" class="form-control" require></textarea>
 				</td>
 			</tr>
 
 			<tr>
 				<th>Instansi Pemerintahan</th>
-				<select>
-					<option></option>
-				</select>
+				<td>
+					<select name="instansi" require>
+						<option value="Desa">Desa</option>
+						<option value="Kesehatan">Kesehatan</option>
+						<option value="Polsek">Polsek</option>
+						<option value="Koramil">Koramil</option>
+						<option value="-">-</option>
+					</select>
+				</td>
 			</tr>
 			
 			<tr>
 				<th>NIP/NRP</th>
 				<td>
-					<input class="form-control" type="text" name="">
+					<input class="form-control" type="text" name="nip" require>
 				</td>
 			</tr>
 			
 			<tr>
 				<th>NIK</th>
 				<td>
-					<input class="form-control" type="text" name="">
+					<input class="form-control" type="text" name="nik" require>
 				</td>
 			</tr>
 			
 			<tr>
 				<th>Tempat Lahir</th>
 				<td>
-					<input class="form-control" type="text" name="">
+					<input class="form-control" type="text" name="tmplahir" require>
 				</td>
 			</tr>
 			
 			<tr>
 				<th>Golongan Darah</th>
 				<td>
-					<select>
-						<option></option>
+					<select name="goldar" require>
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="O">O</option>
+						<option value="AB">AB</option>
+						<option value="-">-</option>
 					</select>
 				</td>
 			</tr>
@@ -107,8 +124,13 @@
 			<tr>
 				<th>Agama</th>
 				<td>
-					<select>
-						<option>Islam</option>
+					<select name="agama" require>
+						<option value="Islam">Islam</option>
+						<option value="Protestan">Protestan</option>
+						<option value="Katolik">Katolik</option>
+						<option value="Buddha">Buddha</option>
+						<option value="Hindu">Hindu</option>
+						<option value="Khonghucu">Khonghucu</option>
 					</select>
 				</td>
 			</tr>
@@ -116,8 +138,12 @@
 			<tr>
 				<th>Jenis Pekerjaan</th>
 				<td>
-					<select>
-						<option></option>
+					<select name="jp" require>
+						<option value="Belum Bekerja">Belum Bekerja</option>
+						<option value="PNS">PNS</option>
+						<option value="Wiraswasta">Wiraswasta</option>
+						<option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+						<option value="Lain-Lain">Lain-Lain</option>
 					</select>
 				</td>
 			</tr>
@@ -125,8 +151,9 @@
 			<tr>
 				<th>Status Kawin</th>
 				<td>
-					<select>
-						<option></option>
+					<select name="statkaw" require>
+						<option value="Kawin">Kawin</option>
+						<option value="Belum Kawin">Belum Kawin</option>
 					</select>
 				</td>
 			</tr>
@@ -134,8 +161,15 @@
 			<tr>
 				<th>Penyandang Cacat</th>
 				<td>
-					<select>
-						<option></option>
+					<select name="cacat" require>
+						<option value="Tunanetra">Tunanetra</option>
+						<option value="Tunarungu">Tunarungu</option>
+						<option value="Tunawicara">Tunawicara</option>
+						<option value="Tunadaksa">Tunadaksa</option>
+						<option value="Tunalaras">Tunalaras</option>
+						<option value="Tunagrahita">Tunagrahita</option>
+						<option value="Tunaganda">Tunaganda</option>
+						<option value="-">-</option>
 					</select>
 				</td>
 			</tr>
@@ -143,16 +177,18 @@
 			<tr>
 				<th>Alamat</th>
 				<td>
-					<textarea class="form-control" name=""></textarea>
+					<textarea class="form-control" name="alamat" require></textarea>
 				</td>
 			</tr>
 			
 			<tr>
 				<th>Upload Foto</th>
 				<td>
-					<input type="file" name="">
+					<input type="file" name="foto" require>
 				</td>
 			</tr>
 		</table>
+		<input type="Submit" value="Simpan" class="btn btn-success">
+		</form>
 	</div>
 @endsection
