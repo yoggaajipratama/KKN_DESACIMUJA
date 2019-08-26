@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DAFTAR APARATUR DESA CIMUJA</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
-</head>
-<body>
+@extends('templates.view_header_admin')
+@section('content')
 	<div class="container">
 		<div class="text-center">
-			<h1>Input Data Aparatur</h1>
+			<h1>Tambah Data Aparatur</h1>
 		</div>
 		<br>
 		<form class="was-validate" action="{{route('inputAparatur')}}" enctype="multipart/form-data" method="POST">		
@@ -174,27 +166,14 @@
 				</div>
 			</div>
 
-			<!-- <div class="form-group row">
-				<label class="col-sm-2 col-form-label" for=""></label>
-				<div class="col-sm-6">
-					<input class="form-control" type="text" name="" id="" placeholder="" required>
-				</div>
-			</div> -->
-
-
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label" for="foto">Upload Foto</label>
-				<div class="col-sm-6">
-					<input class="custom-file file-input form-control" type="file" name="foto" id="foto">
-				</div>
 			</div>
+			<input class="custom-file file-input form-control" type="file" name="foto" id="foto">
 
 			<div class="form-group row">
-			<!-- <div class="text-right"> -->
-					<input class="btn btn-success text-right" type="submit" value="Simpan">
-				<!-- </div> -->
+				<input class="btn btn-success text-right" type="submit" value="Simpan">
 			</div>	
 		</form>
 	</div>
-</body>
-</html>
+@endsection

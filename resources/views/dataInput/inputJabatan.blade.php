@@ -24,7 +24,6 @@
                             <option>{{$key->jenis_jabatan}}</option>
                         <?php endforeach ?>
                     </select>
-                    Baru
                     <input type="submit" name="submit" value="Simpan" class="btn btn-success" onclick="return confirm('Apakah anda yakin? ')">
                 </div>
             </form>
