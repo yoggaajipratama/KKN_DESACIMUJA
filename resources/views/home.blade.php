@@ -11,21 +11,15 @@
                 <div class="container">
                     <table class="table table-striped">
                         <tr>
-                            <th>No</th>
-                            <th>Jenis Jabatan</th>
-                        </tr>
-                        <tr>
                             <td>
-                            <?php foreach ($struktur_jabatan as $key): ?>
-                                <p>{{$key->id}}</p>
-                            <?php endforeach ?>
-                            </td>
-                            <td>
-                            <?php foreach ($struktur_jabatan as $key): ?>
-                                <a href="{{route('daftaraparatur')}}">
-                                    <p style="color: black">{{$key->jenis_jabatan}}</p>
-                                </a>
-                            <?php endforeach ?>
+                                <?php foreach ($struktur_jabatan as $key): ?>
+                                <form action="{{url('/daftaraparatur/'.$key->jenis_jabatan)}}" method="get">
+                                     <input type="hidden" name="jenis_jabatan" value="{{$key->jenis_jabatan}}">
+                                     <button type="submit" class="btn btn-danger">
+                                        <p>{{$key->jenis_jabatan}}</p>
+                                    </button>
+                                </form>
+                                <?php endforeach ?>
                             </td>
                         </tr>
                     </table>
