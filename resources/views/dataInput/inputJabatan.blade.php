@@ -4,17 +4,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <form action="{{route('tambah_jabatan')}}" method="POST">
+            <form action="/tambahjabatan/save" method="POST">
+            @csrf
                 <div class="card">
                     <div class="row justify-content-center">
                         <h5><strong>Masukkan Data Jabatan Baru</strong></h5>
                     </div>
                     <input type="text" name="jabatan">
 
-                    <div class="row justify-content-center">
+                    <!-- <div class="row justify-content-center">
                         <h5><strong>Masukkan Nomor Induk Kependudukan Penambah</strong></h5>
-                    </div>
-                    <input type="text" name="jabatan">
+                    </div> -->
+                    <input type="text" name="jabatan" placeholder="Jabatan Baru">
 
                     <div class="row justify-content-center">
                         <h5><strong>Jenis Jabatan</strong></h5>
