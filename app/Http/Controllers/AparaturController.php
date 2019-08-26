@@ -29,8 +29,14 @@ class AparaturController extends Controller
         return view('dataInput/inputJabatan',['jenis_jabatan' => $jenis_jabatan]);
     }
 
-    public function jabatan(){
-        return redirect('home');
+    public function jabatan(Request $request){
+        $this->validate($request,[
+            'jabatan'=>'required'
+        ]);
+        $datajbtnew = new Jabatan;
+        $datajbtnew->jabatan = $request->get('jabatan');
+        $datajbtnew->save();
+        return redirect('tambahjabatan');
     }
     
     public function inputdata(Request $request){

@@ -19,7 +19,7 @@ Route::post('/aparatur/save','AparaturController@inputdata');
 
 Auth::routes();
 Route::get('/tambahjabatan', 'AparaturController@tampil_jabatan')->name('jabatan');
-Route::post('/tambahjabatan', 'AparaturController@jabatan')->name('tambah_jabatan');
+Route::post('/tambahjabatan/save', 'AparaturController@jabatan')->name('tambah_jabatan');
 
 
 Route::get('/daftaraparatur', 'AparaturController@daftar')->name('daftaraparatur');

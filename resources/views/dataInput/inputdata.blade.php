@@ -185,6 +185,7 @@
 				<th>Upload Foto</th>
 				<td>
 					<input type="file" name="foto" require>
+					<h5>Note: max 2 MB, Jenis File : jpeg,png,jpg</h5>
 				</td>
 			</tr>
 		</table>
