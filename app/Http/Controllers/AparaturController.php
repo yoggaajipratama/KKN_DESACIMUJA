@@ -11,7 +11,8 @@ class AparaturController extends Controller
 {
     public function index(){
         $datajbt = DB::table('jabatan')->orderBy('id')->get();
-    	return view('/dataInput/inputdata',['jabatan'=>$datajbt]);
+        $struktur_jabatan = DB::table('struktur_jabatan')->get();
+    	return view('/dataInput/inputdata',['jabatan'=>$datajbt, 'struktur_jabatan'=>$struktur_jabatan]);
     }
 
     public function daftar(){
@@ -25,7 +26,7 @@ class AparaturController extends Controller
     }
 
     public function tampil_jabatan(){
-        $jenis_jabatan = DB::table('struktur_jabatan')->get();
+        $jenis_jabatan = DB::table('jabatan')->get();
         return view('dataInput/inputJabatan',['jenis_jabatan' => $jenis_jabatan]);
     }
 
@@ -46,6 +47,7 @@ class AparaturController extends Controller
             'tgllahir'=>'required',
             'pendidikan'=>'required',
             'jabatan'=>'required',
+            'jjb'=>'required',
             'skangkat'=>'required',
             'ahirjabatan'=>'required',
             'keterangan'=>'required',
@@ -63,8 +65,8 @@ class AparaturController extends Controller
         $data->agama = $request->get('agama');
         $data->pddk_trkhr = $request->get('pendidikan');
         $data->jbtn = $request->get('jabatan');
+        $data->jns_jbt = $request->get('jjb');
         $data->jns_pkrj = $request->get('jp');
-        // buat dulu view inputan untuk cacat
         $data->cacat = $request->get('cacat');
         $data->status_kwn = $request->get('statkaw');
         $data->skangkat = $request->get('skangkat');

@@ -34,8 +34,8 @@
 				<td>
 					<select class="custom-select form-control" name="pendidikan" require>
 						<option value="SD">SD</option>
-						<option value="SLTP">SLTP</option>
-						<option value="SLTA">SLTA</option>
+						<option value="SLTP">SLTP/Sederajat</option>
+						<option value="SLTA">SLTA/Sederajat</option>
 						<option value="D1">D1</option>
 						<option value="D3">D3</option>
 						<option value="D4">D4</option>
@@ -60,8 +60,8 @@
 			<tr>
 				<th>Jenis Jabatan</th>
 				<td>
-					<select name="jjb" require>
-					@foreach($jnsJbt as $jjb)
+					<select class="custom-select form-control" name="jjb" require>
+					@foreach($struktur_jabatan as $jjb)
 						<option value="{{$jjb->jenis_jabatan}}">{{$jjb->jenis_jabatan}}</option>
 					@endforeach
 					</select>
@@ -137,11 +137,11 @@
 				<td>
 					<select class="custom-select form-control" name="agama" require>
 						<option value="Islam">Islam</option>
-						<option value="Protestan">Protestan</option>
-						<option value="Katolik">Katolik</option>
+						<option value="Nasrani">Nasrani</option>
 						<option value="Buddha">Buddha</option>
 						<option value="Hindu">Hindu</option>
 						<option value="Khonghucu">Khonghucu</option>
+						<option value="Lain-Lain">Lain-Lain</option>
 					</select>
 				</td>
 			</tr>
@@ -150,7 +150,7 @@
 				<th>Jenis Pekerjaan</th>
 				<td>
 					<select class="custom-select form-control" name="jp" require>
-						<option value="Belum Bekerja">Belum Bekerja</option>
+						<option value="Tidak/Belum Bekerja">Tidak/Belum Bekerja</option>
 						<option value="PNS">PNS</option>
 						<option value="Wiraswasta">Wiraswasta</option>
 						<option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
