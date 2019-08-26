@@ -15,7 +15,7 @@
 			<tr>
 				<th>Jenis Kelamin</th>
 				<td>
-					<select name="jk" require>
+					<select class="custom-select form-control" name="jk" require>
 						<option value="Pria">Pria</option>
 						<option value="Wanita">Wanita</option>
 					</select>
@@ -32,7 +32,7 @@
 			<tr>
 				<th>Pendidikan</th>
 				<td>
-					<select name="pendidikan" require>
+					<select class="custom-select form-control" name="pendidikan" require>
 						<option value="SD">SD</option>
 						<option value="SLTP">SLTP</option>
 						<option value="SLTA">SLTA</option>
@@ -49,7 +49,7 @@
 			<tr>
 				<th>Jabatan</th>
 				<td>
-					<select name="jabatan" require>
+					<select class="custom-select form-control" name="jabatan" require>
 					@foreach($jabatan as $jbt)
 						<option value="{{$jbt->jabatan}}">{{$jbt->jabatan}}</option>
 					@endforeach
@@ -77,7 +77,7 @@
 			<tr>
 				<th>Instansi Pemerintahan</th>
 				<td>
-					<select name="instansi" require>
+					<select class="custom-select form-control" name="instansi" require>
 						<option value="Desa">Desa</option>
 						<option value="Kesehatan">Kesehatan</option>
 						<option value="Polsek">Polsek</option>
@@ -111,7 +111,7 @@
 			<tr>
 				<th>Golongan Darah</th>
 				<td>
-					<select name="goldar" require>
+					<select class="custom-select form-control" name="goldar" require>
 						<option value="A">A</option>
 						<option value="B">B</option>
 						<option value="O">O</option>
@@ -124,7 +124,7 @@
 			<tr>
 				<th>Agama</th>
 				<td>
-					<select name="agama" require>
+					<select class="custom-select form-control" name="agama" require>
 						<option value="Islam">Islam</option>
 						<option value="Protestan">Protestan</option>
 						<option value="Katolik">Katolik</option>
@@ -138,7 +138,7 @@
 			<tr>
 				<th>Jenis Pekerjaan</th>
 				<td>
-					<select name="jp" require>
+					<select class="custom-select form-control" name="jp" require>
 						<option value="Belum Bekerja">Belum Bekerja</option>
 						<option value="PNS">PNS</option>
 						<option value="Wiraswasta">Wiraswasta</option>
@@ -151,7 +151,7 @@
 			<tr>
 				<th>Status Kawin</th>
 				<td>
-					<select name="statkaw" require>
+					<select class="custom-select form-control" name="statkaw" require>
 						<option value="Kawin">Kawin</option>
 						<option value="Belum Kawin">Belum Kawin</option>
 					</select>
@@ -161,7 +161,7 @@
 			<tr>
 				<th>Penyandang Cacat</th>
 				<td>
-					<select name="cacat" require>
+					<select class="custom-select form-control" name="cacat" require>
 						<option value="Tunanetra">Tunanetra</option>
 						<option value="Tunarungu">Tunarungu</option>
 						<option value="Tunawicara">Tunawicara</option>
