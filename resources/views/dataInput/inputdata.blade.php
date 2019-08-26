@@ -13,7 +13,7 @@
 			<h1>Input Data Aparatur</h1>
 		</div>
 		<br>
-		<form class="was-validate" action="{{route('inputAparatur')}}" method="post">		
+		<form class="was-validate" action="{{route('inputAparatur')}}" enctype="multipart/form-data" method="POST">		
 			@csrf
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label" for="nama">Nama</label>
@@ -41,8 +41,11 @@
 				<div class="col-sm-6">
 					<select class="custom-select form-control" name="pendidikan" id="pendidikan" required>
 						<option value="SD">SD</option>
-						<option value="SMP">SMP</option>
-						<option value="SMA">SMA</option>
+						<option value="SMP">SLTP</option>
+						<option value="SMA">SLTA</option>
+						<option value="D1">D1</option>
+						<option value="D3">D3</option>
+						<option value="D4">D4</option>
 						<option value="S1">S1</option>
 						<option value="S2">S2</option>
 						<option value="S3">S3</option>
@@ -53,7 +56,9 @@
 				<label class="col-sm-2 col-form-label" for="jabatan">Jabatan</label>
 				<div class="col-sm-6">
 					<select class="custom-select form-control" name="jabatan" id="jabatan" required>
-						<option value="kades">Kades</option>
+						@foreach ( $jabatan as $jbt)
+							<option value="{{ $jbt->jabatan }}">{{ $jbt->jabatan }}</option>
+						@endforeach
 					</select>
 				</div>
 			</div>
@@ -145,6 +150,20 @@
 					<select class="custom-select form-control" name="statkaw" id="statkaw" required>
 						<option value="Kawin">Kawin</option>
 						<option value="Belum Kawin">Belum Kawin</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="cacat" class="col-sm-2 col-form-label">Penyandang Cacat</label>
+				<div class="col-sm-6">
+					<select name="cacat" id="cacat" class="custom-select form-control" require>
+						<option value="Tuna Netra">Tuna Netra</option>
+						<option value="Tuna Wicara">Tuna Wicara</option>
+						<option value="TUna Daksa">Tuna Daksa</option>
+						<option value="Tuna Grahita">Tuna Grahita</option>
+						<option value="Tuna Rungu">Tuna Rungu</option>
+						<option value="Tuna Ganda">Tuna Ganda</option>
+						<option value="-">-</option>
 					</select>
 				</div>
 			</div>

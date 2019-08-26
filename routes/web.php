@@ -22,7 +22,6 @@ Route::get('/aparatur','AparaturController@index')->name('tampilInput');
 
 Route::post('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
 
-Route::get('/aparatur/save','AparaturController@inputdata')->name('inputAparatur');
 
 Auth::routes();
 

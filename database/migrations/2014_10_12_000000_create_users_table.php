@@ -34,7 +34,15 @@ class CreateUsersTable extends Migration
             $table->string('jns_pkrj');
             $table->string('cacat');
             $table->string('status_kwn');
-            $table->string('hub_klrg');
+            // ???????
+            // $table->string('hub_klrg');
+            // tambahan skangkat, ahirjabatan, keterangan, instansi, nip, foto
+            $table->string('skangkat');
+            $table->string('ahirjabatan');
+            $table->string('keterangan');
+            $table->string('instansi');
+            $table->string('nip');
+            $table->string('foto'); 
             $table->timestamps();
         });
 
