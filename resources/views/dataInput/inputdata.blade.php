@@ -33,7 +33,7 @@
 				<th>Pendidikan</th>
 				<td>
 					<select class="custom-select form-control" name="pendidikan" require>
-						<option value="SD">SD/SPG/Sederajat</option>
+						<option value="SD">SD/Sederajat</option>
 						<option value="SLTP">SLTP/SMP/MTS/Sederajat</option>
 						<option value="SLTA">SLTA/SMK/STM/Sederajat</option>
 						<option value="D1">D1</option>
@@ -61,9 +61,9 @@
 				<th>Jenis Jabatan</th>
 				<td>
 					<select class="custom-select form-control" name="jabatan" require>
-					<!-- @foreach($jabatan as $jbt)
-						<option value="{{$jbt->jabatan}}">{{$jbt->jabatan}}</option>
-					@endforeach -->
+					@foreach($jenis_jabatan as $jbt)
+						<option value="{{$jbt->jenis_jabatan}}">{{$jbt->jenis_jabatan}}</option>
+					@endforeach
 					</select>
 				</td>
 			</tr>
