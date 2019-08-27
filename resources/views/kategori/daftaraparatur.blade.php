@@ -22,7 +22,7 @@
                 <td style="font-size: 9pt;">{{$key->id}}</td style="font-size: 9pt;">
                 <td style="font-size: 9pt;">{{$key->nama}}</td>
                 <td style="font-size: 9pt;">{{$key->nip}}</td>
-                <td style="font-size: 9pt;">{{$key->jns_kl}}</td>
+                <td style="fosnt-size: 9pt;">{{$key->jns_kl}}</td>
                 <td style="font-size: 9pt;">{{$key->tgl_lahir}}</td>
                 <td style="font-size: 9pt;">{{$key->pddk_trkhr}}</td>
                 <td style="font-size: 9pt;">{{$key->jbtn}}</td>
