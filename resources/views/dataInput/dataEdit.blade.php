@@ -4,7 +4,7 @@
 		<center>
 			<h2>Edit Data Kepengurusan</h2>
 		</center>
-		<form action="/aparatur/edit_proses/{id}" method="post" enctype="multipart/form-data">
+		<form action="/aparatur/edit_proses/{{$data->id}}" method="post" enctype="multipart/form-data">
 		@csrf
         @method('PUT')
 		<table class="table table-light table-bordered">

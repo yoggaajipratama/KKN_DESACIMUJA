@@ -103,7 +103,7 @@ class AparaturController extends Controller
         return view('dataInput/dataEdit', ['data'=>$data,'jabatan'=>$datajbt, 'struktur_jabatan'=>$struktur_jabatan]);
     }
 
-    public function edit_proses(Request $request, $id){
+    public function editProses(Request $request, $id){
         $this->validate($request,[
             'enama'=>'required',
             'ejk'=>'required',
