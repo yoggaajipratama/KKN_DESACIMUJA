@@ -19,7 +19,7 @@
 			</tr>
             <tr>
                 <?php foreach ($desa_cimuja as $key): ?>
-                <td style="font-size: 9pt;">{{$key->id}}</td style="font-size: 9pt;">
+                <td style="font-size: 9pt;">{{++$i}}</td style="font-size: 9pt;">
                 <td style="font-size: 9pt;">{{$key->nama}}</td>
                 <td style="font-size: 9pt;">{{$key->nip}}</td>
                 <td style="fosnt-size: 9pt;">{{$key->jns_kl}}</td>

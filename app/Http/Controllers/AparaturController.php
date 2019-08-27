@@ -18,7 +18,7 @@ class AparaturController extends Controller
 
     public function daftar($jenis_jabatan){
         $desa_cimuja = DB::table('desa_cimuja')->where('jns_jbt',$jenis_jabatan)->get();
-        return view('kategori/daftaraparatur',['desa_cimuja'=>$desa_cimuja]);
+        return view('kategori/daftaraparatur',['desa_cimuja'=>$desa_cimuja])->with('i', (request()->input('page', 1) - 1) * 5);
     }
     // public function daftar(){
     //     $data = DB::table('desa_cimuja')->get();
@@ -58,6 +58,7 @@ class AparaturController extends Controller
             'instansi'=>'required',
             'nip'=>'required',
             'status'=>'required',
+            'alamat'=>'required',
             'foto'=>'required|file|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         $data = new DesaCimuja;
@@ -99,5 +100,46 @@ class AparaturController extends Controller
         $datajbt = DB::table('jabatan')->orderBy('id')->get();
         $struktur_jabatan = DB::table('struktur_jabatan')->get();
         return view('dataInput/dataEdit', ['data'=>$data,'jabatan'=>$datajbt, 'struktur_jabatan'=>$struktur_jabatan]);
+    }
+
+    public function edit_proses(Request $request, $id){
+        $this->validate($request,[
+            'enama'=>'required',
+            'ejk'=>'required',
+            'etgllahir'=>'required',
+            'ependidikan'=>'required',
+            'ejabatan'=>'required',
+            'ejjb'=>'required',
+            'eskangkat'=>'required',
+            'eahirjabatan'=>'required',
+            'eketerangan'=>'required',
+            'einstansi'=>'required',
+            'enip'=>'required',
+            'estatus'=>'required',
+            'ealamat'=>"required",
+        ]);
+        $data = DesaCimuja::find($id);
+        $data->nama = $request->get('enama');
+        $data->nik = $request->get('enik');
+        $data->tempat_lahir = $request->get('etmplahir');
+        $data->jns_kl = $request->get('ejk');
+        $data->tgl_lahir = $request->get('etgllahir');
+        $data->gol_darah = $request->get('egoldar');
+        $data->agama = $request->get('eagama');
+        $data->pddk_trkhr = $request->get('ependidikan');
+        $data->jbtn = $request->get('ejabatan');
+        $data->jns_jbt = $request->get('ejjb');
+        $data->jns_pkrj = $request->get('ejp');
+        $data->cacat = $request->get('ecacat');
+        $data->status_kwn = $request->get('estatkaw');
+        $data->skangkat = $request->get('eskangkat');
+        $data->ahirjabatan = $request->get('eahirjabatan');
+        $data->keterangan = $request->get('eketerangan');
+        $data->instansi = $request->get('einstansi');
+        $data->nip = $request->get('enip');
+        $data->alamat = $request->get('ealamat');
+        $data->status = $request->get('estatus');
+        $data->save();
+        return redirect()->back();
     }
 }

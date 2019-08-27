@@ -4,7 +4,7 @@
 		<center>
 			<h2>Edit Data Kepengurusan</h2>
 		</center>
-		<form action="/aparatur/edit" method="post" enctype="multipart/form-data">
+		<form action="/aparatur/edit_proses/{id}" method="post" enctype="multipart/form-data">
 		@csrf
         @method('PUT')
 		<table class="table table-light table-bordered">
@@ -71,25 +71,25 @@
 
 			<tr>
 				<th>Nomor SK</th>
-				<td><input type="text" class="form-control" name="skangkat" value="{{$data->skangkat}}" require></td>
+				<td><input type="text" class="form-control" name="eskangkat" value="{{$data->skangkat}}" require></td>
 			</tr>
 
 			<tr>
 				<th>Massa Akhir Jabatan</th>
-				<td><input type="date" class="form-control" name="ahirjabatan" value="{{$data->ahirjabatan}}" require></td>
+				<td><input type="date" class="form-control" name="eahirjabatan" value="{{$data->ahirjabatan}}" require></td>
 			</tr>
 
 			<tr>
 				<th>Keterangan</th>
 				<td>
-					<textarea name="keterangan" class="form-control" value="{{$data->keterangan}}" require>{{$data->keterangan}}</textarea>
+					<textarea name="eketerangan" class="form-control" value="{{$data->keterangan}}" require>{{$data->keterangan}}</textarea>
 				</td>
 			</tr>
 
 			<tr>
 				<th>Instansi Pemerintahan</th>
 				<td>
-					<select class="custom-select form-control" name="instansi" require>
+					<select class="custom-select form-control" name="einstansi" require>
 						<option value="Desa"  {{$data->instansi == 'Desa' ? 'selected' : ''}}>Desa</option>
 						<option value="Kesehatan" {{$data->instansi == 'Kesehatan' ? 'selected' : ''}}>Kesehatan</option>
 						<option value="Polsek" {{$data->instansi == 'Polsek' ? 'selected' : ''}}>Polsek</option>
@@ -102,28 +102,28 @@
 			<tr>
 				<th>NIP/NRP</th>
 				<td>
-					<input class="form-control" type="text" name="nip" value="{{$data->nip}}" require>
+					<input class="form-control" type="text" name="enip" value="{{$data->nip}}" require>
 				</td>
 			</tr>
 			
 			<tr>
 				<th>NIK</th>
 				<td>
-					<input class="form-control" type="text" name="nik" value="{{$data->nik}}" require>
+					<input class="form-control" type="text" name="enik" value="{{$data->nik}}" require>
 				</td>
 			</tr>
 			
 			<tr>
 				<th>Tempat Lahir</th>
 				<td>
-					<input class="form-control" type="text" name="tmplahir" value="{{$data->tempat_lahir}}" require>
+					<input class="form-control" type="text" name="etmplahir" value="{{$data->tempat_lahir}}" require>
 				</td>
 			</tr>
 			
 			<tr>
 				<th>Golongan Darah</th>
 				<td>
-					<select class="custom-select form-control" name="goldar" require>
+					<select class="custom-select form-control" name="egoldar" require>
 						<option value="A" {{$data->gol_darah == 'A' ? 'selected' : ''}}>A</option>
 						<option value="B" {{$data->gol_darah == 'B' ? 'selected' : ''}}>B</option>
 						<option value="O" {{$data->gol_darah == 'O' ? 'selected' : ''}}>O</option>
@@ -136,7 +136,7 @@
 			<tr>
 				<th>Agama</th>
 				<td>
-					<select class="custom-select form-control" name="agama" require>
+					<select class="custom-select form-control" name="eagama" require>
 						<option value="Islam" {{$data->agama == 'Islam' ? 'selected' : ''}}>Islam</option>
 						<option value="Nasrani" {{$data->agama == 'Nasrani' ? 'selected' : ''}}>Nasrani</option>
 						<option value="Buddha" {{$data->agama == 'Buddha' ? 'selected' : ''}}>Buddha</option>
@@ -150,7 +150,7 @@
 			<tr>
 				<th>Jenis Pekerjaan</th>
 				<td>
-					<select class="custom-select form-control" name="jp" require>
+					<select class="custom-select form-control" name="ejp" require>
 						<option value="Tidak/Belum Bekerja" {{$data->jns_pkrj == '' ? 'selected' : ''}}>Tidak/Belum Bekerja</option>
 						<option value="PNS" {{$data->jns_pkrj == 'PNS' ? 'selected' : ''}}>PNS</option>
 						<option value="Wiraswasta" {{$data->jns_pkrj == 'Wiraswasta' ? 'selected' : ''}}>Wiraswasta</option>
@@ -163,7 +163,7 @@
 			<tr>
 				<th>Status Kawin</th>
 				<td>
-					<select class="custom-select form-control" name="statkaw" require>
+					<select class="custom-select form-control" name="estatkaw" require>
 						<option value="Kawin" {{$data->status_kwn == 'Kawin' ? 'selected' : ''}}>Kawin</option>
 						<option value="Belum Kawin" {{$data->status_kwn == 'Belum Kawin' ? 'selected' : ''}}>Belum Kawin</option>
 					</select>
@@ -173,7 +173,7 @@
 			<tr>
 				<th>Penyandang Cacat</th>
 				<td>
-					<select class="custom-select form-control" name="cacat" value="" require>
+					<select class="custom-select form-control" name="ecacat" value="" require>
 						<option value="Tunanetra" {{$data->cacat == 'Tunanetra' ? 'selected' : ''}}>Tunanetra</option>
 						<option value="Tunarungu" {{$data->cacat == 'Tunarungu' ? 'selected' : ''}}>Tunarungu</option>
 						<option value="Tunawicara" {{$data->cacat == 'Tunawicara' ? 'selected' : ''}}>Tunawicara</option>
@@ -189,7 +189,7 @@
 			<tr>
 				<th>Status Kepengurusan</th>
 				<td>
-					<select class="custom-select form-control" name="status" require>
+					<select class="custom-select form-control" name="estatus" require>
 						<option value="Aktif" {{$data->status == 'Aktif' ? 'selected' : ''}}>Aktif</option>
 						<option value="Non Aktif" {{$data->status == 'Non Aktif' ? 'selected' : ''}}>Non Aktif</option>
 					</select>
@@ -199,15 +199,13 @@
 			<tr>
 				<th>Alamat</th>
 				<td>
-					<textarea class="form-control" name="alamat" value="{{$data->alamat}}" require>{{$data->alamat}}</textarea>
+					<textarea class="form-control" name="ealamat" value="{{$data->alamat}}" require>{{$data->alamat}}</textarea>
 				</td>
 			</tr>
 			
 			<tr>
-				<th>Upload Foto</th>
+				<th>Foto</th>
 				<td>
-					<input type="file" name="foto" value="{{$data->foto}}" require disable>
-					<h5>Note: max 2 MB, Jenis File : jpeg,png,jpg</h5>
 					<img width="150px" src="{{ url('/data_gambar/'.$data->foto) }}">
 				</td>
 			</tr>

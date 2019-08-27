@@ -23,6 +23,8 @@ Route::post('/aparatur/save','AparaturController@inputdata');
 
 Route::get('/aparatur/edit/{id}','AparaturController@editdata')->name('tampedit');
 
+Route::put('/aparatur/edit_proses/{id}','AparaturController@editProses');
+
 Auth::routes();
 Route::get('/tambahjabatan', 'AparaturController@tampil_jabatan')->name('jabatan');
 Route::post('/tambahjabatan/save', 'AparaturController@jabatan')->name('tambah_jabatan');
