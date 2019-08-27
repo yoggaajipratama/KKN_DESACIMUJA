@@ -189,6 +189,16 @@
 			</tr>
 			
 			<tr>
+				<th>Status Kepengurusan</th>
+				<td>
+					<select class="custom-select form-control" name="status" require>
+						<option value="Aktif">Aktif</option>
+						<option value="Non Aktif">Non Aktif</option>
+					</select>
+				</td>				
+			</tr>
+
+			<tr>
 				<th>Alamat</th>
 				<td>
 					<textarea class="form-control" name="alamat" require></textarea>
