@@ -12,6 +12,8 @@ Route::get('/kategori', function () {
     return view('kategori/view_kategori');
 });
 
+Route::get('/daftaraparatur', 'AparaturController@daftar');
+
 Route::get('/daftaraparatur/{jenis_jabatan}', 'AparaturController@daftar');
 
 Route::get('/daftaraparaturlama', 'AparaturController@daftarlama')->name('daftaraparaturlama');

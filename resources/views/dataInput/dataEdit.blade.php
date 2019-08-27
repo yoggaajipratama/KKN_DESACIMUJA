@@ -187,9 +187,19 @@
 			</tr>
 			
 			<tr>
+				<th>Status Kepengurusan</th>
+				<td>
+					<select class="custom-select form-control" name="status" require>
+						<option value="Aktif" {{$data->status == 'Aktif' ? 'selected' : ''}}>Aktif</option>
+						<option value="Non Aktif" {{$data->status == 'Non Aktif' ? 'selected' : ''}}>Non Aktif</option>
+					</select>
+				</td>				
+			</tr>
+
+			<tr>
 				<th>Alamat</th>
 				<td>
-					<textarea class="form-control" name="alamat" value="{{$data->alamat}}" require></textarea>
+					<textarea class="form-control" name="alamat" value="{{$data->alamat}}" require>{{$data->alamat}}</textarea>
 				</td>
 			</tr>
 			
