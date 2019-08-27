@@ -5,33 +5,33 @@
 		<h2 class="text-center">DAFTAR APARATUR DESA CIMUJA</h2>
 		<table class="table table-bordered">
 			<tr style="background: skyblue;">
-                <th>No</th>
-				<th>Nama</th>
-                <th>NIP / NRP</th>
-                <th>Jenis Kelamin</th>
-                <th>Tanggal Lahir</th>
-                <th>Pendidikan</th>
-				<th>Jabatan</th>
-                <th>SK Pengangkatan</th>
-                <th>SK Masa Akhir Jabatan</th>
-				<th>Keterangan</th>
-                <th>Ubah Status</th>
+                <th style="font-size: 9pt;">No</th>
+				<th style="font-size: 9pt;">Nama</th>
+                <th style="font-size: 9pt;">NIP / NRP</th>
+                <th style="font-size: 9pt;">Jenis Kelamin</th>
+                <th style="font-size: 9pt;">Tanggal Lahir</th>
+                <th style="font-size: 9pt;">Pendidikan</th>
+				<th style="font-size: 9pt;">Jabatan</th>
+                <th style="font-size: 9pt;">SK Pengangkatan</th>
+                <th style="font-size: 9pt;">Tahun Masa Akhir Jabatan</th>
+				<th style="font-size: 9pt;">Keterangan</th>
+                <th style="font-size: 9pt;">Status</th>
 			</tr>
-            @foreach($data as $d)
-            <tr>    
-                <td>{{$d->id}}</td>
-                <td>{{$d->nama}}</td>
-                <td>{{$d->nip}}</td>
-                <td>{{$d->jns_kl}}</td>
-                <td>{{$d->tgl_lahir}}</td>
-                <td>{{$d->pddk_trkhr}}</td>
-                <td>{{$d->jbtn}}</td>
-                <td>{{$d->skangkat}}</td>
-                <td>{{$d->ahirjabatan}}</td>
-                <td>{{$d->keterangan}}</td>
-                <td></td>
+            <tr>
+                <?php foreach ($desa_cimuja as $key): ?>
+                <td style="font-size: 9pt;">{{$key->id}}</td style="font-size: 9pt;">
+                <td style="font-size: 9pt;">{{$key->nama}}</td>
+                <td style="font-size: 9pt;">{{$key->nip}}</td>
+                <td style="font-size: 9pt;">{{$key->jns_kl}}</td>
+                <td style="font-size: 9pt;">{{$key->tgl_lahir}}</td>
+                <td style="font-size: 9pt;">{{$key->pddk_trkhr}}</td>
+                <td style="font-size: 9pt;">{{$key->jbtn}}</td>
+                <td style="font-size: 9pt;">{{$key->skangkat}}</td>
+                <td style="font-size: 9pt;">{{$key->ahirjabatan}}</td>
+                <td style="font-size: 9pt;">{{$key->keterangan}}</td>
+                <td style="font-size: 9pt;">{{$key->status}}</td>
+                <?php endforeach ?>
             </tr>
-            @endforeach
 		</table>
         <div class="container">
             <p class="text-right" style="margin-right: 50px;">Kepala Desa Cimuja</p>

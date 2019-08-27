@@ -16,8 +16,8 @@ class AparaturController extends Controller
     }
 
     public function daftar($jenis_jabatan){
-        $desa_cimuja = DB::table('desa_cimuja')->where('jns_jbtn','$jenis_jabatan');
-        return view('kategori/view_kategori');
+        $desa_cimuja = DB::table('desa_cimuja')->where('jns_jbt',$jenis_jabatan)->get();
+        return view('kategori/daftaraparatur',['desa_cimuja'=>$desa_cimuja]);
     }
 
     public function daftarlama(){
@@ -53,6 +53,7 @@ class AparaturController extends Controller
             'keterangan'=>'required',
             'instansi'=>'required',
             'nip'=>'required',
+            'status'=>'required',
             'foto'=>'required|file|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         $data = new DesaCimuja;
@@ -74,6 +75,7 @@ class AparaturController extends Controller
         $data->keterangan = $request->get('keterangan');
         $data->instansi = $request->get('instansi');
         $data->nip = $request->get('nip');
+        $data->status = $request->get('status');
         // $data->foto = $request->get('foto');
         // menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('foto');
@@ -84,6 +86,6 @@ class AparaturController extends Controller
 		$tujuan_upload = 'data_gambar';
 		$file->move($tujuan_upload,$nama_file);
         $data->save();
-        return redirect('daftaraparatur');
+        return redirect('/home');
     }
 }
