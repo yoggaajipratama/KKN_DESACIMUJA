@@ -18,12 +18,13 @@ class AparaturController extends Controller
 
     public function daftar($jenis_jabatan){
         $desa_cimuja = DB::table('desa_cimuja')->where('jns_jbt',$jenis_jabatan)->get();
-        return view('kategori/daftaraparatur',['desa_cimuja'=>$desa_cimuja])->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('kategori/daftaraparatur',['desa_cimuja'=>$desa_cimuja]);
     }
-    // public function daftar(){
-    //     $data = DB::table('desa_cimuja')->get();
-    //     return view('kategori/daftaraparatur',['data'=>$data]);
-    // }
+
+    public function profil($nip){
+        $profil = DB::table('desa_cimuja')->where('nip',$nip)->get();
+        return view('data_print/view_print',['profil'=>$profil]);
+    }
 
     public function daftarlama(){
         return view('kategori/view_kategori');

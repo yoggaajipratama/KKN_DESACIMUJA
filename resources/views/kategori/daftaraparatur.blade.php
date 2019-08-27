@@ -1,39 +1,45 @@
 @extends('templates.view_header_admin')
 @section('content')
-<div class="col-md-12">
+<div class="col-md-0" style="margin-left: 10px; margin-right: 10px">
 	<div class="card">
 		<h2 class="text-center">DAFTAR APARATUR DESA CIMUJA</h2>
 		<table class="table table-bordered">
-			<tr style="background: skyblue;">
-                <th style="font-size: 9pt;">No</th>
-				<th style="font-size: 9pt;">Nama</th>
-                <th style="font-size: 9pt;">NIP / NRP</th>
-                <th style="font-size: 9pt;">Jenis Kelamin</th>
-                <th style="font-size: 9pt;">Tanggal Lahir</th>
-                <th style="font-size: 9pt;">Pendidikan</th>
-				<th style="font-size: 9pt;">Jabatan</th>
-                <th style="font-size: 9pt;">SK Pengangkatan</th>
-                <th style="font-size: 9pt;">Tahun Masa Akhir Jabatan</th>
-				<th style="font-size: 9pt;">Keterangan</th>
-                <th style="font-size: 9pt;">Status</th>
+			<tr class="text-center" style="background-color: skyblue">
+                <th style="font-size: 9pt;"><p>No</p></th>
+				<th style="font-size: 9pt;"><p>Nama</p></th>
+                <th style="font-size: 9pt;"><p>NIP / NRP</p></th>
+                <th style="font-size: 9pt;"><p>JK</p></th>
+                <th style="font-size: 9pt;"><p>Tgl Lahir</p></th>
+                <th style="font-size: 9pt;"><p>Pendidikan</p></th>
+				<th style="font-size: 9pt;"><p>Jabatan</p></th>
+                <th style="font-size: 9pt;"><p>SK Pengangkatan</p></th>
+                <th style="font-size: 9pt;"><p>Akhir Jabatan</p></th>
+				<th style="font-size: 9pt;"><p>Keterangan</p></th>
+                <th style="font-size: 9pt;"><p>Status</p></th>
+                <th style="font-size: 9pt;"><p>Info detail</p></th>
 			</tr>
             <tr>
+                <?php $i=0; ?>
                 <?php foreach ($desa_cimuja as $key): ?>
-                <td style="font-size: 9pt;">{{++$i}}</td style="font-size: 9pt;">
-                <td style="font-size: 9pt;">{{$key->nama}}</td>
-                <td style="font-size: 9pt;">{{$key->nip}}</td>
-                <td style="fosnt-size: 9pt;">{{$key->jns_kl}}</td>
-                <td style="font-size: 9pt;">{{$key->tgl_lahir}}</td>
-                <td style="font-size: 9pt;">{{$key->pddk_trkhr}}</td>
-                <td style="font-size: 9pt;">{{$key->jbtn}}</td>
-                <td style="font-size: 9pt;">{{$key->skangkat}}</td>
-                <td style="font-size: 9pt;">{{$key->ahirjabatan}}</td>
-                <td style="font-size: 9pt;">{{$key->keterangan}}</td>
-                <td style="font-size: 9pt;">{{$key->status}}</td>
+                    <td style="font-size: 9pt;">{{++$i}}</td style="font-size: 9pt;">
+                    <td style="font-size: 9pt;">{{$key->nama}}</td>
+                    <td style="font-size: 9pt;">{{$key->nip}}</td>
+                    <td style="font-size: 9pt;">{{$key->jns_kl}}</td>
+                    <td style="font-size: 9pt;">{{$key->tgl_lahir}}</td>
+                    <td style="font-size: 9pt;">{{$key->pddk_trkhr}}</td>
+                    <td style="font-size: 9pt;">{{$key->jbtn}}</td>
+                    <td style="font-size: 9pt;">{{$key->skangkat}}</td>
+                    <td style="font-size: 9pt;">{{$key->ahirjabatan}}</td>
+                    <td style="font-size: 9pt;">{{$key->keterangan}}</td>
+                    <td style="font-size: 9pt;">{{$key->status}}</td>
+                    <td style="font-size: 9pt;">
+                        <a href="{{url('/profil/'.$key->nip)}}" class="btn btn-success">Lihat Profil</a>
+                    </td>
                 <?php endforeach ?>
             </tr>
 		</table>
         <div class="container">
+            <button class="btn btn-danger">Cetak</button>
             <p class="text-right" style="margin-right: 50px;">Kepala Desa Cimuja</p>
         </div>
 	</div>
