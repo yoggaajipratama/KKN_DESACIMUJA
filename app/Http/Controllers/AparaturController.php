@@ -15,9 +15,15 @@ class AparaturController extends Controller
     	return view('/dataInput/inputdata',['jabatan'=>$datajbt, 'struktur_jabatan'=>$struktur_jabatan]);
     }
 
+<<<<<<< HEAD
+    public function daftar($jenis_jabatan){
+        $desa_cimuja = DB::table('desa_cimuja')->where('jns_jbt',$jenis_jabatan)->get();
+        return view('kategori/daftaraparatur',['desa_cimuja'=>$desa_cimuja]);
+=======
     public function daftar(){
         $data = DB::table('desa_cimuja')->get();
         return view('kategori/daftaraparatur',['data'=>$data]);
+>>>>>>> 0def91a7af1d5ff4da30a2ae97e1980216390415
     }
 
     public function daftarlama(){
@@ -52,6 +58,7 @@ class AparaturController extends Controller
             'keterangan'=>'required',
             'instansi'=>'required',
             'nip'=>'required',
+            'status'=>'required',
             'foto'=>'required|file|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         $data = new DesaCimuja;
@@ -73,7 +80,10 @@ class AparaturController extends Controller
         $data->keterangan = $request->get('keterangan');
         $data->instansi = $request->get('instansi');
         $data->nip = $request->get('nip');
+<<<<<<< HEAD
+=======
         $data->alamat = $request->get('alamat');
+>>>>>>> 0def91a7af1d5ff4da30a2ae97e1980216390415
         $data->status = $request->get('status');
         // $data->foto = $request->get('foto');
         // menyimpan data file yang diupload ke variabel $file
@@ -85,7 +95,7 @@ class AparaturController extends Controller
 		$tujuan_upload = 'data_gambar';
 		$file->move($tujuan_upload,$nama_file);
         $data->save();
-        return redirect('daftaraparatur');
+        return redirect('/home');
     }
 
     public function editdata($id){
