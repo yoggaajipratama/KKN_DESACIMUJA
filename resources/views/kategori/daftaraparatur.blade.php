@@ -18,25 +18,25 @@
                 <th style="font-size: 9pt;"><p>Status</p></th>
                 <th style="font-size: 9pt;"><p>Info detail</p></th>
 			</tr>
+            <?php $i=0; ?>
+            <?php foreach ($desa_cimuja as $key): ?>
             <tr>
-                <?php $i=0; ?>
-                <?php foreach ($desa_cimuja as $key): ?>
-                    <td style="font-size: 9pt;">{{++$i}}</td style="font-size: 9pt;">
-                    <td style="font-size: 9pt;">{{$key->nama}}</td>
-                    <td style="font-size: 9pt;">{{$key->nip}}</td>
-                    <td style="font-size: 9pt;">{{$key->jns_kl}}</td>
-                    <td style="font-size: 9pt;">{{$key->tgl_lahir}}</td>
-                    <td style="font-size: 9pt;">{{$key->pddk_trkhr}}</td>
-                    <td style="font-size: 9pt;">{{$key->jbtn}}</td>
-                    <td style="font-size: 9pt;">{{$key->skangkat}}</td>
-                    <td style="font-size: 9pt;">{{$key->ahirjabatan}}</td>
-                    <td style="font-size: 9pt;">{{$key->keterangan}}</td>
-                    <td style="font-size: 9pt;">{{$key->status}}</td>
-                    <td style="font-size: 9pt;">
-                        <a href="{{url('/profil/'.$key->nip)}}" class="btn btn-success">Lihat Profil</a>
-                    </td>
-                <?php endforeach ?>
+                <td style="font-size: 9pt;">{{++$i}}</td style="font-size: 9pt;">
+                <td style="font-size: 9pt;">{{$key->nama}}</td>
+                <td style="font-size: 9pt;">{{$key->nip}}</td>
+                <td style="font-size: 9pt;">{{$key->jns_kl}}</td>
+                <td style="font-size: 9pt;">{{$key->tgl_lahir}}</td>
+                <td style="font-size: 9pt;">{{$key->pddk_trkhr}}</td>
+                <td style="font-size: 9pt;">{{$key->jbtn}}</td>
+                <td style="font-size: 9pt;">{{$key->skangkat}}</td>
+                <td style="font-size: 9pt;">{{$key->ahirjabatan}}</td>
+                <td style="font-size: 9pt;">{{$key->keterangan}}</td>
+                <td style="font-size: 9pt;">{{$key->status}}</td>
+                <td style="font-size: 9pt;">
+                    <a href="{{url('/profil/'.$key->nip)}}" class="btn btn-success">Lihat Profil</a>
+                </td>
             </tr>
+            <?php endforeach ?>
 		</table>
         <div class="container">
             <button class="btn btn-danger">Cetak</button>
