@@ -206,7 +206,7 @@
 			<tr>
 				<th>Upload Foto</th>
 				<td>
-					<input type="file" name="foto" value="{{$data->foto}}" require>
+					<input type="file" name="foto" value="{{$data->foto}}" require disable>
 					<h5>Note: max 2 MB, Jenis File : jpeg,png,jpg</h5>
 					<img width="150px" src="{{ url('/data_gambar/'.$data->foto) }}">
 				</td>
