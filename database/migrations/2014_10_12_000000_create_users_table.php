@@ -45,6 +45,7 @@ class CreateUsersTable extends Migration
             $table->string('foto'); 
             $table->string('jns_jbt');
             $table->string('status');
+            $table->string('alamat');
             $table->timestamps();
         });
 

@@ -74,6 +74,7 @@ class AparaturController extends Controller
         $data->keterangan = $request->get('keterangan');
         $data->instansi = $request->get('instansi');
         $data->nip = $request->get('nip');
+        $data->alamat = $request->get('alamat');
         // $data->foto = $request->get('foto');
         // menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('foto');
