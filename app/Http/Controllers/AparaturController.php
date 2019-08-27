@@ -15,9 +15,9 @@ class AparaturController extends Controller
     	return view('/dataInput/inputdata',['jabatan'=>$datajbt, 'struktur_jabatan'=>$struktur_jabatan]);
     }
 
-    public function daftar(){
-        $data = DB::table('desa_cimuja')->get();
-        return view('kategori/daftaraparatur',['data'=>$data]);
+    public function daftar($jenis_jabatan){
+        $desa_cimuja = DB::table('desa_cimuja')->where('jns_jbtn','$jenis_jabatan');
+        return view('kategori/view_kategori');
     }
 
     public function daftarlama(){
