@@ -123,28 +123,28 @@
 				<h6><strong>DATA KEPEMILIKAN DOKUMEN</strong></h6>
 				<table style="margin-left: 30px">
 					<tr>
-						<th>Nomor Kartu Keluarga</th>
+						<th>18.&ensp;Nomor Kartu Keluarga</th>
 					</tr>
 					<tr>
-						<th>Nomor Passport</th>
+						<th>19.&ensp;Nomor Passport</th>
 					</tr>
 					<tr>
-						<th>Tanggal Berakhir Passport</th>
+						<th>20.&ensp;Tanggal Berakhir Passport</th>
 					</tr>
 					<tr>
-						<th>No Akta Kelahiran</th>
+						<th>21.&ensp;No Akta Kelahiran</th>
 					</tr>
 					<tr>
-						<th>No Akta Kawin/Buku Nikah</th>
+						<th>22.&ensp;No Akta Kawin/Buku Nikah</th>
 					</tr>
 					<tr>
-						<th>Tanggal Perkawinan</th>
+						<th>23.&ensp;Tanggal Perkawinan</th>
 					</tr>
 					<tr>
-						<th>No Akta Cerai/Surat Cerai</th>
+						<th>24.&ensp;No Akta Cerai/Surat Cerai</th>
 					</tr>
 					<tr>
-						<th>Tanggal Perceraian</th>
+						<th>25.&ensp;Tanggal Perceraian</th>
 					</tr>
 				</table>
 			</div>

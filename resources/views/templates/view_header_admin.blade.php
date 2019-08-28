@@ -64,18 +64,6 @@
             <p>Tambah Data Kepengurusan</p>
           </a>
         </li>
-
-        <li class="nav-item active  ">
-          <a class="nav-link" href="#0">
-            <p>Update Data Kepengurusan</p>
-          </a>
-        </li>
-
-        <li class="nav-item active  ">
-          <a class="nav-link" href="#0">
-            <p>Hapus Data Kepengurusan</p>
-          </a>
-        </li>
     </ul>
   </div>
 </div>
